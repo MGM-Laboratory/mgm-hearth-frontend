@@ -13,9 +13,11 @@ FROM node:${NODE_VERSION}-slim AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-# The OpenAPI contract lives at the workspace root; mounted at build time.
-COPY API_CONTRACT.yaml* /API_CONTRACT.yaml
-RUN if [ -f /API_CONTRACT.yaml ]; then npx -y openapi-typescript /API_CONTRACT.yaml -o lib/api/schema.d.ts; fi
+# `lib/api/schema.d.ts` is the committed-generated OpenAPI client types. The
+# workspace-root API_CONTRACT.yaml is not in the build context for standalone
+# CI/CD builds — the committed schema is the source of truth at image-build
+# time. Regenerate locally with `npm run generate:api` and commit when the
+# contract changes.
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
