@@ -1,0 +1,471 @@
+{
+  "common": {
+    "save": "Simpan",
+    "cancel": "Batal",
+    "delete": "Hapus",
+    "edit": "Ubah",
+    "create": "Buat",
+    "update": "Perbarui",
+    "confirm": "Konfirmasi",
+    "search": "Cari",
+    "loading": "Memuat…",
+    "yes": "Ya",
+    "no": "Tidak",
+    "all": "Semua",
+    "none": "Tidak ada",
+    "back": "Kembali",
+    "next": "Berikutnya",
+    "previous": "Sebelumnya",
+    "submit": "Kirim",
+    "approve": "Setujui",
+    "reject": "Tolak",
+    "close": "Tutup",
+    "open": "Buka",
+    "more": "Lainnya",
+    "less": "Lebih sedikit",
+    "today": "Hari ini",
+    "tomorrow": "Besok",
+    "thisWeek": "Minggu ini",
+    "showing": "Menampilkan {from}–{to} dari {total}",
+    "empty": "Belum ada apa-apa di sini",
+    "tryAgain": "Coba lagi",
+    "optional": "Opsional",
+    "required": "Wajib",
+    "english": "English",
+    "indonesian": "Bahasa Indonesia"
+  },
+  "nav": {
+    "dashboard": "Dasbor",
+    "assets": "Aset",
+    "borrows": "Peminjaman",
+    "procurement": "Pengadaan",
+    "infra": "Infrastruktur",
+    "rooms": "Ruangan",
+    "licenses": "Lisensi",
+    "general": "Umum",
+    "users": "Pengguna",
+    "settings": "Pengaturan",
+    "scan": "Pindai",
+    "cart": "Keranjang",
+    "notifications": "Notifikasi",
+    "myRequests": "Permintaan saya"
+  },
+  "auth": {
+    "signIn": "Masuk",
+    "signOut": "Keluar",
+    "signInWithKeycloak": "Masuk dengan Keycloak",
+    "signedInAs": "Masuk sebagai {name}",
+    "sessionExpired": "Sesi Anda telah berakhir. Silakan masuk kembali.",
+    "notItMemberTitle": "Khusus IT & Maintenance",
+    "notItMemberBody": "Area ini dibatasi untuk anggota grup IT & Infrastructure. Jika ini keliru, hubungi administrator.",
+    "externalContinueAs": "Lanjutkan sebagai tamu",
+    "externalIdentifyTitle": "Ceritakan tentang diri Anda",
+    "externalIdentifyBody": "Kami akan mengingat Anda di perangkat ini agar tidak perlu mengisi ulang."
+  },
+  "errors": {
+    "badRequest": "Permintaan tidak valid.",
+    "validationFailed": "Beberapa kolom perlu diperbaiki.",
+    "unauthenticated": "Silakan masuk untuk melanjutkan.",
+    "tokenExpired": "Sesi Anda telah berakhir.",
+    "forbidden": "Anda tidak memiliki izin untuk tindakan ini.",
+    "notItMember": "Hanya anggota grup IT & Maintenance yang dapat mengakses area ini.",
+    "resourceNotFound": "Kami tidak menemukan yang Anda cari.",
+    "conflict": "Tindakan ini tidak dapat dilakukan saat ini.",
+    "rateLimited": "Terlalu banyak permintaan. Mohon lebih perlahan.",
+    "internalError": "Terjadi kesalahan di sisi kami.",
+    "serviceUnavailable": "Layanan yang dibutuhkan sedang tidak tersedia.",
+    "borrowItemUnavailable": "Satu atau lebih item di keranjang sudah tidak tersedia.",
+    "borrowLimitExceeded": "Anda hanya boleh meminjam maksimal {max} item dalam satu peminjaman aktif.",
+    "borrowNotReadyForHandover": "Peminjaman ini belum siap untuk serah-terima.",
+    "borrowAlreadyReturned": "Peminjaman ini sudah dikembalikan.",
+    "borrowRequiresApproval": "Setiap peminjaman membutuhkan persetujuan maintainer.",
+    "roomBookingConflict": "Waktu yang dipilih bertabrakan dengan pemesanan yang sudah disetujui.",
+    "roomBookingOutsideHours": "Ruangan hanya buka pukul {open}:00 – {close}:00.",
+    "roomBookingTooLong": "Setiap pemesanan maksimal {minutes} menit.",
+    "roomBookingTooSoon": "Pemesanan harus dibuat minimal {hours} jam sebelumnya.",
+    "roomBookingTooFar": "Pemesanan paling jauh {days} hari ke depan.",
+    "roomCapacityExceeded": "Jumlah peserta melebihi kapasitas ruangan.",
+    "procurementNeedsAdminApproval": "Permintaan ini harus disetujui oleh admin.",
+    "infraSpecWarning": "Spesifikasi yang diminta terlihat tidak biasa. Mohon konfirmasi.",
+    "licensePeriodInvalid": "Durasi harus antara 1 dan {max} bulan.",
+    "fileTooLarge": "Berkas terlalu besar.",
+    "fileTypeNotAllowed": "Tipe berkas tidak diperbolehkan di sini.",
+    "externalSessionRequired": "Sesi belum diinisialisasi. Mohon segarkan halaman.",
+    "externalSessionExpired": "Sesi tamu Anda telah berakhir.",
+    "ticketLookupFailed": "Kami tidak menemukan tiket dengan detail tersebut.",
+    "stateTransitionInvalid": "Tindakan tidak diperbolehkan pada status saat ini.",
+    "duplicate": "Entri dengan ID tersebut sudah ada."
+  },
+  "borrow": {
+    "title": "Peminjaman",
+    "submitTitle": "Ajukan peminjaman",
+    "purpose": "Tujuan",
+    "purposePlaceholder": "Akan digunakan untuk apa?",
+    "pickupDate": "Tanggal ambil",
+    "durationDays": "Durasi (hari)",
+    "expectedReturnAt": "Pengembalian diharapkan",
+    "items": "Item",
+    "quantity": "Jumlah",
+    "status": {
+      "submitted": "Diajukan",
+      "approved": "Disetujui",
+      "rejected": "Ditolak",
+      "ready_for_pickup": "Siap diambil",
+      "borrowed": "Dipinjam",
+      "returned": "Dikembalikan",
+      "overdue": "Terlambat",
+      "cancelled": "Dibatalkan",
+      "closed": "Ditutup"
+    },
+    "actions": {
+      "approve": "Setujui",
+      "reject": "Tolak",
+      "handover": "Serah-terima",
+      "markReady": "Tandai siap",
+      "markBorrowed": "Tandai dipinjam",
+      "markReturned": "Tandai dikembalikan",
+      "reportDamage": "Laporkan kerusakan",
+      "cancel": "Batalkan permintaan"
+    },
+    "handover": {
+      "title": "Serah-terima",
+      "allocateUnits": "Alokasikan unit",
+      "uploadPickupPhotos": "Unggah foto saat diambil",
+      "conditionOut": "Kondisi saat diambil"
+    },
+    "return": {
+      "title": "Pengembalian",
+      "conditionIn": "Kondisi saat dikembalikan",
+      "damageReported": "Kerusakan dilaporkan",
+      "damageNote": "Detail kerusakan",
+      "uploadReturnPhotos": "Unggah foto pengembalian"
+    },
+    "ticketNumber": "Tiket #{number}"
+  },
+  "procurement": {
+    "title": "Pengadaan",
+    "submitTitle": "Ajukan pembelian",
+    "itemName": "Nama item",
+    "quantity": "Jumlah",
+    "unitPrice": "Harga satuan (IDR)",
+    "neededBy": "Dibutuhkan paling lambat",
+    "justification": "Justifikasi",
+    "productLink": "Tautan produk",
+    "attachments": "Lampiran",
+    "totalEstimate": "Estimasi total",
+    "needsAdminApproval": "Membutuhkan persetujuan admin",
+    "status": {
+      "submitted": "Diajukan",
+      "in_review": "Sedang ditinjau",
+      "approved": "Disetujui",
+      "rejected": "Ditolak",
+      "ordered": "Dipesan",
+      "received": "Diterima",
+      "closed": "Ditutup"
+    },
+    "actions": {
+      "approve": "Setujui",
+      "reject": "Tolak",
+      "markOrdered": "Tandai sudah dipesan",
+      "markReceived": "Tandai sudah diterima",
+      "close": "Tutup"
+    }
+  },
+  "infra": {
+    "title": "Infrastruktur",
+    "submitTitle": "Ajukan infrastruktur",
+    "purpose": "Tujuan",
+    "projectRepo": "URL proyek / repo",
+    "vcpu": "vCPU",
+    "ramGb": "RAM (GB)",
+    "storageGb": "Penyimpanan (GB)",
+    "autoscale": "Autoscale",
+    "autoscaleMaxInstances": "Maks. instance",
+    "neededBy": "Dibutuhkan paling lambat",
+    "estimatedMonthlyCost": "Estimasi biaya bulanan (IDR)",
+    "services": "Layanan",
+    "addCustom": "Tambah kustom",
+    "categories": {
+      "compute": "Komputasi",
+      "storage": "Penyimpanan",
+      "database": "Basis data",
+      "messaging": "Messaging / Streaming",
+      "search": "Pencarian",
+      "observability": "Observability",
+      "networking": "CDN / Jaringan",
+      "secrets": "Secrets / Konfigurasi",
+      "cicd": "CI/CD",
+      "other": "Lainnya"
+    },
+    "warnings": {
+      "highVcpu": "vCPU di atas {threshold} tidak biasa.",
+      "highRam": "RAM di atas {threshold} GB tidak biasa.",
+      "highStorage": "Penyimpanan di atas {threshold} GB tidak biasa.",
+      "autoscaleNoCeiling": "Autoscale tanpa batas maksimum dapat tak terkendali."
+    },
+    "acknowledgeWarnings": "Saya konfirmasi spesifikasi ini memang diperlukan",
+    "status": {
+      "submitted": "Diajukan",
+      "in_review": "Sedang ditinjau",
+      "approved": "Disetujui",
+      "rejected": "Ditolak",
+      "provisioned": "Telah disediakan",
+      "closed": "Ditutup"
+    }
+  },
+  "room": {
+    "title": "Pemesanan ruangan",
+    "submitTitle": "Pesan ruangan",
+    "room": "Ruangan",
+    "startAt": "Mulai",
+    "endAt": "Selesai",
+    "attendees": "Peserta",
+    "recurrence": "Pengulangan",
+    "noRecurrence": "Tidak berulang",
+    "openHours": "Buka {open}:00 – {close}:00",
+    "status": {
+      "pending": "Menunggu",
+      "approved": "Disetujui",
+      "rejected": "Ditolak",
+      "cancelled": "Dibatalkan"
+    },
+    "availability": {
+      "title": "Ketersediaan",
+      "available": "Tersedia",
+      "booked": "Terpesan",
+      "buffer": "Jeda"
+    }
+  },
+  "license": {
+    "title": "Lisensi",
+    "submitTitle": "Ajukan lisensi",
+    "kind": {
+      "software": "Perangkat lunak",
+      "ai": "AI"
+    },
+    "purpose": "Tujuan",
+    "periodMonths": "Durasi (bulan)",
+    "needsCodeVersion": "Membutuhkan versi CLI / code (mis. Claude Code, Codex)",
+    "selectedItems": "Lisensi terpilih",
+    "status": {
+      "submitted": "Diajukan",
+      "in_review": "Sedang ditinjau",
+      "approved": "Disetujui",
+      "rejected": "Ditolak",
+      "assigned": "Sudah dialokasikan",
+      "closed": "Ditutup"
+    },
+    "seatAssigned": "Seat dialokasikan",
+    "assignSeat": "Alokasikan seat"
+  },
+  "general": {
+    "title": "Permintaan umum",
+    "submitTitle": "Ajukan permintaan umum",
+    "requestTitle": "Judul",
+    "requestDescription": "Deskripsi",
+    "attachments": "Lampiran",
+    "status": {
+      "submitted": "Diajukan",
+      "in_review": "Sedang ditinjau",
+      "approved": "Disetujui",
+      "rejected": "Ditolak",
+      "closed": "Ditutup"
+    }
+  },
+  "asset": {
+    "title": "Aset",
+    "model": "Model",
+    "unit": "Unit",
+    "category": "Kategori",
+    "tags": "Tag",
+    "serial": "Nomor seri",
+    "assetTag": "Tag aset",
+    "publicId": "ID publik",
+    "location": {
+      "room": "Ruangan",
+      "shelf": "Rak",
+      "cabinet": "Lemari"
+    },
+    "purchase": {
+      "price": "Harga beli (IDR)",
+      "date": "Tanggal beli",
+      "usefulLifeMonths": "Masa manfaat (bulan)",
+      "salvageValue": "Nilai sisa (IDR)",
+      "depreciationMethod": "Metode penyusutan"
+    },
+    "depreciationMethod": {
+      "straight_line": "Garis lurus",
+      "declining_balance": "Saldo menurun",
+      "none": "Tidak ada"
+    },
+    "condition": {
+      "excellent": "Sangat baik",
+      "good": "Baik",
+      "fair": "Cukup",
+      "broken": "Rusak"
+    },
+    "status": {
+      "available": "Tersedia",
+      "reserved": "Direservasi",
+      "borrowed": "Dipinjam",
+      "in_maintenance": "Dalam perawatan",
+      "retired": "Tidak aktif",
+      "lost": "Hilang"
+    },
+    "publicStatus": {
+      "available": "Tersedia",
+      "in_use": "Sedang dipakai",
+      "unavailable": "Tidak tersedia"
+    },
+    "companions": "Item pendamping",
+    "usageSop": "SOP pemakaian",
+    "internalNotes": "Catatan internal",
+    "currentHolder": "Sedang dipegang oleh",
+    "actions": {
+      "addUnit": "Tambah unit",
+      "import": "Impor massal",
+      "generateSticker": "Buat stiker",
+      "scan": "Pindai",
+      "viewTimeline": "Lihat linimasa",
+      "scheduleMaintenance": "Jadwalkan perawatan"
+    },
+    "import": {
+      "title": "Impor massal",
+      "selectFile": "Pilih berkas CSV atau XLSX",
+      "dryRun": "Dry run (hanya validasi)",
+      "result": "Mengimpor {modelsCreated} model dan {unitsCreated} unit, {errors} error."
+    }
+  },
+  "notifications": {
+    "title": "Notifikasi",
+    "markAllRead": "Tandai semua sudah dibaca",
+    "empty": "Anda sudah membaca semuanya.",
+    "borrow": {
+      "submitted": "Peminjaman baru {ticketNumber} dari {requester}",
+      "decided": "Peminjaman {ticketNumber} {decision}",
+      "ready_for_pickup": "{ticketNumber} siap diambil",
+      "picked_up": "{ticketNumber} sudah diambil",
+      "returned": "{ticketNumber} sudah dikembalikan",
+      "overdue": "{ticketNumber} terlambat {days} hari"
+    },
+    "procurement": {
+      "submitted": "Pengadaan baru {ticketNumber}",
+      "decided": "Pengadaan {ticketNumber} {decision}",
+      "lifecycle_changed": "Pengadaan {ticketNumber} → {status}"
+    },
+    "infra": {
+      "submitted": "Permintaan infra baru {ticketNumber}",
+      "decided": "Infra {ticketNumber} {decision}",
+      "provisioned": "Infra {ticketNumber} telah disediakan"
+    },
+    "room": {
+      "booking_created": "Pemesanan ruangan baru {ticketNumber} untuk {roomName}",
+      "booking_decided": "Pemesanan {ticketNumber} {decision}"
+    },
+    "license": {
+      "submitted": "Permintaan lisensi baru {ticketNumber}",
+      "decided": "Lisensi {ticketNumber} {decision}",
+      "assigned": "Seat dialokasikan untuk lisensi {ticketNumber}"
+    },
+    "general": {
+      "submitted": "Permintaan umum baru {ticketNumber}",
+      "decided": "Permintaan umum {ticketNumber} {decision}"
+    },
+    "maintenance": {
+      "due": "Perawatan jatuh tempo untuk {assetName}"
+    },
+    "user": {
+      "promoted": "Akun Anda dipromosikan menjadi admin"
+    },
+    "system": {
+      "alert": "{title}"
+    }
+  },
+  "email": {
+    "common": {
+      "greeting": "Halo {name},",
+      "signoff": "— MGM Lab",
+      "view": "Lihat tiket"
+    },
+    "borrow.submitted": {
+      "subject": "Peminjaman {ticketNumber} diterima",
+      "body": "Permintaan peminjaman {ticketNumber} telah dikirim dan menunggu persetujuan."
+    },
+    "borrow.decided": {
+      "subject": "Peminjaman {ticketNumber} {decision}",
+      "body": "Permintaan peminjaman {ticketNumber} {decision} pada {decidedAt}."
+    },
+    "borrow.ready_for_pickup": {
+      "subject": "{ticketNumber} siap diambil",
+      "body": "Peminjaman {ticketNumber} sudah siap. Pengambilan di lab pukul {open}:00 – {close}:00."
+    },
+    "borrow.returned": {
+      "subject": "Peminjaman {ticketNumber} dikembalikan",
+      "body": "Kami telah menerima item untuk {ticketNumber}. Terima kasih."
+    },
+    "borrow.overdue": {
+      "subject": "Peminjaman {ticketNumber} terlambat",
+      "body": "Peminjaman {ticketNumber} terlambat {days} hari. Mohon segera dikembalikan."
+    },
+    "procurement.submitted": {
+      "subject": "Pengadaan {ticketNumber} diajukan",
+      "body": "Permintaan pengadaan {ticketNumber} telah diajukan."
+    },
+    "procurement.decided": {
+      "subject": "Pengadaan {ticketNumber} {decision}",
+      "body": "Permintaan pengadaan {ticketNumber} {decision}."
+    },
+    "procurement.lifecycle_changed": {
+      "subject": "Pengadaan {ticketNumber} → {status}",
+      "body": "Pengadaan {ticketNumber} berpindah ke status {status}."
+    },
+    "infra.submitted": {
+      "subject": "Permintaan infra {ticketNumber} diajukan",
+      "body": "Permintaan infra {ticketNumber} telah diajukan."
+    },
+    "infra.decided": {
+      "subject": "Infra {ticketNumber} {decision}",
+      "body": "Permintaan infra {ticketNumber} {decision}."
+    },
+    "infra.provisioned": {
+      "subject": "Infra {ticketNumber} telah disediakan",
+      "body": "Permintaan infra {ticketNumber} telah disediakan."
+    },
+    "room.booking_created": {
+      "subject": "Pemesanan ruangan {ticketNumber} diterima",
+      "body": "Pemesanan untuk {roomName} pada {startAt} telah diterima."
+    },
+    "room.booking_decided": {
+      "subject": "Pemesanan ruangan {ticketNumber} {decision}",
+      "body": "Pemesanan {ticketNumber} {decision}."
+    },
+    "license.submitted": {
+      "subject": "Permintaan lisensi {ticketNumber} diajukan",
+      "body": "Permintaan lisensi {ticketNumber} telah diajukan."
+    },
+    "license.decided": {
+      "subject": "Lisensi {ticketNumber} {decision}",
+      "body": "Permintaan lisensi {ticketNumber} {decision}."
+    },
+    "license.assigned": {
+      "subject": "Seat lisensi dialokasikan ({ticketNumber})",
+      "body": "Seat untuk permintaan lisensi {ticketNumber} telah dialokasikan."
+    },
+    "general.submitted": {
+      "subject": "Permintaan umum {ticketNumber} diajukan",
+      "body": "Permintaan umum {ticketNumber} telah diajukan."
+    },
+    "general.decided": {
+      "subject": "Permintaan umum {ticketNumber} {decision}",
+      "body": "Permintaan umum {ticketNumber} {decision}."
+    },
+    "maintenance.due": {
+      "subject": "Perawatan jatuh tempo: {assetName}",
+      "body": "{assetName} jatuh tempo perawatan pada {dueAt}."
+    },
+    "user.promoted": {
+      "subject": "Anda dipromosikan menjadi admin",
+      "body": "Akun Anda di MGM Lab telah dipromosikan menjadi administrator."
+    }
+  }
+}

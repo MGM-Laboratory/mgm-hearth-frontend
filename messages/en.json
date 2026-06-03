@@ -1,0 +1,471 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "update": "Update",
+    "confirm": "Confirm",
+    "search": "Search",
+    "loading": "Loading…",
+    "yes": "Yes",
+    "no": "No",
+    "all": "All",
+    "none": "None",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "approve": "Approve",
+    "reject": "Reject",
+    "close": "Close",
+    "open": "Open",
+    "more": "More",
+    "less": "Less",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "thisWeek": "This week",
+    "showing": "Showing {from}–{to} of {total}",
+    "empty": "Nothing here yet",
+    "tryAgain": "Try again",
+    "optional": "Optional",
+    "required": "Required",
+    "english": "English",
+    "indonesian": "Bahasa Indonesia"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "assets": "Assets",
+    "borrows": "Borrows",
+    "procurement": "Procurement",
+    "infra": "Infrastructure",
+    "rooms": "Rooms",
+    "licenses": "Licenses",
+    "general": "General",
+    "users": "Users",
+    "settings": "Settings",
+    "scan": "Scan",
+    "cart": "Cart",
+    "notifications": "Notifications",
+    "myRequests": "My requests"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "signInWithKeycloak": "Sign in with Keycloak",
+    "signedInAs": "Signed in as {name}",
+    "sessionExpired": "Your session has expired. Please sign in again.",
+    "notItMemberTitle": "IT & Maintenance only",
+    "notItMemberBody": "This area is restricted to members of the IT & Infrastructure group. If you believe this is a mistake, contact an administrator.",
+    "externalContinueAs": "Continue as guest",
+    "externalIdentifyTitle": "Tell us who you are",
+    "externalIdentifyBody": "We will remember you on this device so you don't have to fill this in again."
+  },
+  "errors": {
+    "badRequest": "Bad request.",
+    "validationFailed": "Some fields need attention.",
+    "unauthenticated": "Please sign in to continue.",
+    "tokenExpired": "Your session has expired.",
+    "forbidden": "You don't have permission to do that.",
+    "notItMember": "Only IT & Maintenance group members can access this area.",
+    "resourceNotFound": "We couldn't find what you were looking for.",
+    "conflict": "That can't be done right now.",
+    "rateLimited": "Too many requests. Please slow down.",
+    "internalError": "Something went wrong on our end.",
+    "serviceUnavailable": "A required service is temporarily unavailable.",
+    "borrowItemUnavailable": "One or more items in your cart are no longer available.",
+    "borrowLimitExceeded": "You can have at most {max} items in a single active borrow.",
+    "borrowNotReadyForHandover": "This borrow isn't ready for handover yet.",
+    "borrowAlreadyReturned": "This borrow has already been returned.",
+    "borrowRequiresApproval": "Borrows always require maintainer approval.",
+    "roomBookingConflict": "That time slot overlaps another approved booking.",
+    "roomBookingOutsideHours": "The room is only open between {open}:00 and {close}:00.",
+    "roomBookingTooLong": "Each booking can be at most {minutes} minutes.",
+    "roomBookingTooSoon": "Please book at least {hours} hours in advance.",
+    "roomBookingTooFar": "Bookings can be made at most {days} days ahead.",
+    "roomCapacityExceeded": "Attendees exceed the room's capacity.",
+    "procurementNeedsAdminApproval": "This request must be approved by an admin.",
+    "infraSpecWarning": "Your requested specs look unusual. Please confirm.",
+    "licensePeriodInvalid": "Period must be between 1 and {max} months.",
+    "fileTooLarge": "That file is too large.",
+    "fileTypeNotAllowed": "That file type is not allowed here.",
+    "externalSessionRequired": "Session not initialized. Please refresh.",
+    "externalSessionExpired": "Your visitor session has expired.",
+    "ticketLookupFailed": "We couldn't find a ticket with those details.",
+    "stateTransitionInvalid": "That action isn't allowed in the current state.",
+    "duplicate": "An entry with that identifier already exists."
+  },
+  "borrow": {
+    "title": "Borrow",
+    "submitTitle": "Submit a borrow request",
+    "purpose": "Purpose",
+    "purposePlaceholder": "What are you using this for?",
+    "pickupDate": "Pickup date",
+    "durationDays": "Duration (days)",
+    "expectedReturnAt": "Expected return",
+    "items": "Items",
+    "quantity": "Quantity",
+    "status": {
+      "submitted": "Submitted",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "ready_for_pickup": "Ready for pickup",
+      "borrowed": "Borrowed",
+      "returned": "Returned",
+      "overdue": "Overdue",
+      "cancelled": "Cancelled",
+      "closed": "Closed"
+    },
+    "actions": {
+      "approve": "Approve",
+      "reject": "Reject",
+      "handover": "Hand over",
+      "markReady": "Mark ready",
+      "markBorrowed": "Mark borrowed",
+      "markReturned": "Mark returned",
+      "reportDamage": "Report damage",
+      "cancel": "Cancel request"
+    },
+    "handover": {
+      "title": "Hand over",
+      "allocateUnits": "Allocate units",
+      "uploadPickupPhotos": "Upload pickup photos",
+      "conditionOut": "Condition at pickup"
+    },
+    "return": {
+      "title": "Return",
+      "conditionIn": "Condition at return",
+      "damageReported": "Damage reported",
+      "damageNote": "Damage details",
+      "uploadReturnPhotos": "Upload return photos"
+    },
+    "ticketNumber": "Ticket #{number}"
+  },
+  "procurement": {
+    "title": "Procurement",
+    "submitTitle": "Request a purchase",
+    "itemName": "Item name",
+    "quantity": "Quantity",
+    "unitPrice": "Unit price (IDR)",
+    "neededBy": "Needed by",
+    "justification": "Justification",
+    "productLink": "Product link",
+    "attachments": "Attachments",
+    "totalEstimate": "Estimated total",
+    "needsAdminApproval": "Needs admin approval",
+    "status": {
+      "submitted": "Submitted",
+      "in_review": "In review",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "ordered": "Ordered",
+      "received": "Received",
+      "closed": "Closed"
+    },
+    "actions": {
+      "approve": "Approve",
+      "reject": "Reject",
+      "markOrdered": "Mark ordered",
+      "markReceived": "Mark received",
+      "close": "Close"
+    }
+  },
+  "infra": {
+    "title": "Infrastructure",
+    "submitTitle": "Request infrastructure",
+    "purpose": "Purpose",
+    "projectRepo": "Project / repo URL",
+    "vcpu": "vCPU",
+    "ramGb": "RAM (GB)",
+    "storageGb": "Storage (GB)",
+    "autoscale": "Autoscale",
+    "autoscaleMaxInstances": "Max instances",
+    "neededBy": "Needed by",
+    "estimatedMonthlyCost": "Estimated monthly cost (IDR)",
+    "services": "Services",
+    "addCustom": "Add custom",
+    "categories": {
+      "compute": "Compute",
+      "storage": "Storage",
+      "database": "Databases",
+      "messaging": "Messaging / Streaming",
+      "search": "Search",
+      "observability": "Observability",
+      "networking": "CDN / Networking",
+      "secrets": "Secrets / Config",
+      "cicd": "CI/CD",
+      "other": "Other"
+    },
+    "warnings": {
+      "highVcpu": "vCPU above {threshold} is unusual.",
+      "highRam": "RAM above {threshold} GB is unusual.",
+      "highStorage": "Storage above {threshold} GB is unusual.",
+      "autoscaleNoCeiling": "Autoscale without a maximum can run away."
+    },
+    "acknowledgeWarnings": "I confirm these specs are necessary",
+    "status": {
+      "submitted": "Submitted",
+      "in_review": "In review",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "provisioned": "Provisioned",
+      "closed": "Closed"
+    }
+  },
+  "room": {
+    "title": "Room booking",
+    "submitTitle": "Book a room",
+    "room": "Room",
+    "startAt": "Start",
+    "endAt": "End",
+    "attendees": "Attendees",
+    "recurrence": "Recurrence",
+    "noRecurrence": "Does not repeat",
+    "openHours": "Open {open}:00 – {close}:00",
+    "status": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "cancelled": "Cancelled"
+    },
+    "availability": {
+      "title": "Availability",
+      "available": "Available",
+      "booked": "Booked",
+      "buffer": "Buffer"
+    }
+  },
+  "license": {
+    "title": "License",
+    "submitTitle": "Request a license",
+    "kind": {
+      "software": "Software",
+      "ai": "AI"
+    },
+    "purpose": "Purpose",
+    "periodMonths": "Duration (months)",
+    "needsCodeVersion": "Needs CLI / code version (e.g., Claude Code, Codex)",
+    "selectedItems": "Selected licenses",
+    "status": {
+      "submitted": "Submitted",
+      "in_review": "In review",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "assigned": "Assigned",
+      "closed": "Closed"
+    },
+    "seatAssigned": "Seat assigned",
+    "assignSeat": "Assign seat"
+  },
+  "general": {
+    "title": "General request",
+    "submitTitle": "Submit a general request",
+    "requestTitle": "Title",
+    "requestDescription": "Description",
+    "attachments": "Attachments",
+    "status": {
+      "submitted": "Submitted",
+      "in_review": "In review",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "closed": "Closed"
+    }
+  },
+  "asset": {
+    "title": "Assets",
+    "model": "Model",
+    "unit": "Unit",
+    "category": "Category",
+    "tags": "Tags",
+    "serial": "Serial number",
+    "assetTag": "Asset tag",
+    "publicId": "Public ID",
+    "location": {
+      "room": "Room",
+      "shelf": "Shelf",
+      "cabinet": "Cabinet"
+    },
+    "purchase": {
+      "price": "Purchase price (IDR)",
+      "date": "Purchase date",
+      "usefulLifeMonths": "Useful life (months)",
+      "salvageValue": "Salvage value (IDR)",
+      "depreciationMethod": "Depreciation method"
+    },
+    "depreciationMethod": {
+      "straight_line": "Straight-line",
+      "declining_balance": "Declining balance",
+      "none": "None"
+    },
+    "condition": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "fair": "Fair",
+      "broken": "Broken"
+    },
+    "status": {
+      "available": "Available",
+      "reserved": "Reserved",
+      "borrowed": "Borrowed",
+      "in_maintenance": "In maintenance",
+      "retired": "Retired",
+      "lost": "Lost"
+    },
+    "publicStatus": {
+      "available": "Available",
+      "in_use": "In use",
+      "unavailable": "Unavailable"
+    },
+    "companions": "Companion items",
+    "usageSop": "Usage SOP",
+    "internalNotes": "Internal notes",
+    "currentHolder": "Currently held by",
+    "actions": {
+      "addUnit": "Add unit",
+      "import": "Bulk import",
+      "generateSticker": "Generate sticker",
+      "scan": "Scan",
+      "viewTimeline": "View timeline",
+      "scheduleMaintenance": "Schedule maintenance"
+    },
+    "import": {
+      "title": "Bulk import",
+      "selectFile": "Select CSV or XLSX file",
+      "dryRun": "Dry run (validate only)",
+      "result": "Imported {modelsCreated} models and {unitsCreated} units, {errors} errors."
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Mark all as read",
+    "empty": "You're all caught up.",
+    "borrow": {
+      "submitted": "New borrow request {ticketNumber} from {requester}",
+      "decided": "Your borrow {ticketNumber} was {decision}",
+      "ready_for_pickup": "{ticketNumber} is ready for pickup",
+      "picked_up": "{ticketNumber} was picked up",
+      "returned": "{ticketNumber} was returned",
+      "overdue": "{ticketNumber} is now overdue by {days} day(s)"
+    },
+    "procurement": {
+      "submitted": "New procurement {ticketNumber}",
+      "decided": "Procurement {ticketNumber} was {decision}",
+      "lifecycle_changed": "Procurement {ticketNumber} → {status}"
+    },
+    "infra": {
+      "submitted": "New infra request {ticketNumber}",
+      "decided": "Infra {ticketNumber} was {decision}",
+      "provisioned": "Infra {ticketNumber} provisioned"
+    },
+    "room": {
+      "booking_created": "New room booking {ticketNumber} for {roomName}",
+      "booking_decided": "Booking {ticketNumber} was {decision}"
+    },
+    "license": {
+      "submitted": "New license request {ticketNumber}",
+      "decided": "License {ticketNumber} was {decision}",
+      "assigned": "Seat assigned for license {ticketNumber}"
+    },
+    "general": {
+      "submitted": "New general request {ticketNumber}",
+      "decided": "General request {ticketNumber} was {decision}"
+    },
+    "maintenance": {
+      "due": "Maintenance due for {assetName}"
+    },
+    "user": {
+      "promoted": "You were promoted to admin"
+    },
+    "system": {
+      "alert": "{title}"
+    }
+  },
+  "email": {
+    "common": {
+      "greeting": "Hi {name},",
+      "signoff": "— MGM Lab",
+      "view": "View ticket"
+    },
+    "borrow.submitted": {
+      "subject": "Borrow request {ticketNumber} received",
+      "body": "Your borrow request {ticketNumber} has been submitted and is awaiting approval."
+    },
+    "borrow.decided": {
+      "subject": "Borrow {ticketNumber} was {decision}",
+      "body": "Your borrow request {ticketNumber} was {decision} on {decidedAt}."
+    },
+    "borrow.ready_for_pickup": {
+      "subject": "{ticketNumber} is ready for pickup",
+      "body": "Your borrow {ticketNumber} is ready. Pickup is at the lab from {open}:00 to {close}:00."
+    },
+    "borrow.returned": {
+      "subject": "Borrow {ticketNumber} returned",
+      "body": "We've received the items for {ticketNumber}. Thank you."
+    },
+    "borrow.overdue": {
+      "subject": "Borrow {ticketNumber} is overdue",
+      "body": "Your borrow {ticketNumber} is overdue by {days} day(s). Please return the items as soon as possible."
+    },
+    "procurement.submitted": {
+      "subject": "Procurement {ticketNumber} submitted",
+      "body": "Your procurement request {ticketNumber} has been submitted."
+    },
+    "procurement.decided": {
+      "subject": "Procurement {ticketNumber} was {decision}",
+      "body": "Your procurement request {ticketNumber} was {decision}."
+    },
+    "procurement.lifecycle_changed": {
+      "subject": "Procurement {ticketNumber} → {status}",
+      "body": "Procurement {ticketNumber} moved to status {status}."
+    },
+    "infra.submitted": {
+      "subject": "Infra request {ticketNumber} submitted",
+      "body": "Your infra request {ticketNumber} has been submitted."
+    },
+    "infra.decided": {
+      "subject": "Infra {ticketNumber} was {decision}",
+      "body": "Your infra request {ticketNumber} was {decision}."
+    },
+    "infra.provisioned": {
+      "subject": "Infra {ticketNumber} provisioned",
+      "body": "Infra request {ticketNumber} has been provisioned."
+    },
+    "room.booking_created": {
+      "subject": "Room booking {ticketNumber} received",
+      "body": "Your booking for {roomName} on {startAt} has been received."
+    },
+    "room.booking_decided": {
+      "subject": "Room booking {ticketNumber} was {decision}",
+      "body": "Your booking {ticketNumber} was {decision}."
+    },
+    "license.submitted": {
+      "subject": "License request {ticketNumber} submitted",
+      "body": "Your license request {ticketNumber} has been submitted."
+    },
+    "license.decided": {
+      "subject": "License {ticketNumber} was {decision}",
+      "body": "Your license request {ticketNumber} was {decision}."
+    },
+    "license.assigned": {
+      "subject": "License seat assigned ({ticketNumber})",
+      "body": "A seat has been assigned for license request {ticketNumber}."
+    },
+    "general.submitted": {
+      "subject": "General request {ticketNumber} submitted",
+      "body": "Your general request {ticketNumber} has been submitted."
+    },
+    "general.decided": {
+      "subject": "General request {ticketNumber} was {decision}",
+      "body": "Your general request {ticketNumber} was {decision}."
+    },
+    "maintenance.due": {
+      "subject": "Maintenance due: {assetName}",
+      "body": "{assetName} is due for maintenance on {dueAt}."
+    },
+    "user.promoted": {
+      "subject": "You were promoted to admin",
+      "body": "Your account on MGM Lab has been promoted to administrator."
+    }
+  }
+}

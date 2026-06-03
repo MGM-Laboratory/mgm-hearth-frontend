@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Surfaces */
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-muted: #f7f7f5;
+  --surface-inverse: #0e1116;
+
+  /* Brand */
+  --brand-blue: #3a6dc5;
+  --brand-yellow: #f7bf33;
+  --brand-red: #f94141;
+  --brand-green: #0f8657;
+  --brand-blue-50: #ecf1fa;
+  --brand-yellow-50: #fef6e0;
+  --brand-red-50: #fee5e5;
+  --brand-green-50: #e2f1ea;
+
+  /* Text */
+  --ink: #0e1116;
+  --ink-2: #3b4150;
+  --ink-3: #6b7280;
+  --ink-4: #9aa1ad;
+
+  /* Lines */
+  --line: #ececea;
+  --line-strong: #d8d8d2;
+
+  /* Focus ring */
+  --focus: #3a6dc5;
+
+  /* Shadows */
+  --shadow-1: 0 1px 2px rgba(14, 17, 22, 0.04), 0 1px 1px rgba(14, 17, 22, 0.03);
+  --shadow-2: 0 6px 24px -8px rgba(14, 17, 22, 0.10), 0 2px 6px -2px rgba(14, 17, 22, 0.05);
+  --shadow-3: 0 24px 60px -20px rgba(14, 17, 22, 0.18), 0 4px 12px -4px rgba(14, 17, 22, 0.06);
+
+  /* Typography roots */
+  --font-display: "Bricolage Grotesque", "Söhne", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Geist", "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  body {
+    font-family: var(--font-sans);
+    color: var(--ink);
+    background-color: var(--bg);
+    font-feature-settings: "ss01", "cv11";
+  }
+  /* Tabular numerals for tables and dashboards */
+  table,
+  .tabular {
+    font-feature-settings: "tnum";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--ink);
+  }
+  code, kbd, samp, pre {
+    font-family: var(--font-mono);
+  }
+  *:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  /* Hairline borders default */
+  hr {
+    border-color: var(--line);
+  }
+}
+
+@layer components {
+  .ds-container {
+    @apply mx-auto w-full max-w-[1440px] px-6 md:px-10;
+  }
+  .ds-card {
+    @apply rounded-DEFAULT border border-line bg-surface shadow-1;
+  }
+  .ds-divider {
+    @apply h-px w-full bg-line;
+  }
+}
