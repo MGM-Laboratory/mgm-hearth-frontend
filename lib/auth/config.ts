@@ -1,9 +1,31 @@
-import NextAuth, { type NextAuthConfig } from "next-auth";
+import NextAuth, { customFetch, type NextAuthConfig } from "next-auth";
 import Keycloak from "next-auth/providers/keycloak";
 
 const KEYCLOAK_ISSUER = process.env.KEYCLOAK_ISSUER_URL ?? "https://iam.labmgm.org/realms/mgm";
 const KEYCLOAK_CLIENT_ID = process.env.KEYCLOAK_CLIENT_ID_HEARTH ?? "hearth-web";
 const KEYCLOAK_CLIENT_SECRET = process.env.KEYCLOAK_CLIENT_SECRET_HEARTH ?? "";
+
+// Workaround for Auth.js v5 (oauth4webapi) + this Keycloak realm:
+// The discovery doc advertises `authorization_response_iss_parameter_supported: true`,
+// but the realm does NOT actually include `iss` on the callback redirect. Auth.js then
+// throws `CallbackRouteError: response parameter "iss" (issuer) missing` and the user
+// lands on /api/auth/error — surfacing as a broken sign-in.
+// We intercept the discovery response and force the flag to false so the validator
+// skips the iss check (RFC 9207 is optional; safe to disable for this realm).
+const keycloakFetch: typeof fetch = async (input, init) => {
+  const url =
+    typeof input === "string" || input instanceof URL ? input.toString() : input.url;
+  const res = await fetch(input, init);
+  if (url.endsWith("/.well-known/openid-configuration") && res.ok) {
+    const body = (await res.json()) as Record<string, unknown>;
+    body.authorization_response_iss_parameter_supported = false;
+    return new Response(JSON.stringify(body), {
+      status: res.status,
+      headers: { "content-type": "application/json" },
+    });
+  }
+  return res;
+};
 const IT_GROUP = process.env.KEYCLOAK_IT_GROUP ?? "/member/it-infrastructure";
 const BOOTSTRAP_ADMIN_EMAIL = process.env.BOOTSTRAP_ADMIN_EMAIL ?? "admin@labmgm.org";
 
@@ -94,6 +116,7 @@ export const authConfig: NextAuthConfig = {
       clientSecret: KEYCLOAK_CLIENT_SECRET,
       issuer: KEYCLOAK_ISSUER,
       authorization: { params: { scope: "openid email profile" } },
+      [customFetch]: keycloakFetch,
     }),
   ],
   callbacks: {
