@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import path from "node:path";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./lib/i18n/request.ts");
@@ -15,7 +14,6 @@ const nextConfig: NextConfig = {
   // locally via `npm run typecheck` and in IDE.
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
-  outputFileTracingRoot: path.join(__dirname, "../"),
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "**" },
