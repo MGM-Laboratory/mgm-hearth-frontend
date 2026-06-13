@@ -36,6 +36,12 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          # Public, browser-inlined config baked into the bundle at build time.
+          build-args: |
+            HEARTH_API_URL=https://hearth-api.labmgm.org/api/v1
+            PINJAM_PUBLIC_URL=https://pinjam.labmgm.org
+            KEYCLOAK_ISSUER_URL=https://iam.labmgm.org/realms/mgm
+            APP_PUBLIC_ASSET_BASE_URL=https://hearth.labmgm.org/a
           push: true
           platforms: linux/amd64
           cache-from: type=gha
