@@ -154,8 +154,10 @@ export const authConfig: NextAuthConfig = {
     },
   },
   pages: {
-    signIn: "/api/auth/signin",
-    error: "/api/auth/error",
+    // Custom entry page that immediately initiates the Keycloak OIDC flow.
+    // NOTE: never point this at "/api/auth/signin" — that is Auth.js's own
+    // built-in route, so the handler would redirect to itself forever.
+    signIn: "/signin",
   },
 };
 

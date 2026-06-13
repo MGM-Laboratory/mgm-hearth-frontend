@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { auth } from "@/lib/auth/config";
 
-const PUBLIC_PATHS = ["/a", "/not-it", "/api/auth", "/api/health", "/_next", "/favicon.svg", "/patterns", "/logo.svg"];
+const PUBLIC_PATHS = ["/a", "/signin", "/not-it", "/api/auth", "/api/health", "/_next", "/favicon.svg", "/patterns", "/logo.svg"];
 
 function isPublic(pathname: string): boolean {
   return PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/") || pathname.startsWith(p));
@@ -22,9 +22,11 @@ export default auth((req: NextRequest & { auth?: { role?: string; error?: string
     return NextResponse.next();
   }
 
-  // Authenticated check
+  // Authenticated check — bounce to our custom /signin page, which immediately
+  // initiates the Keycloak OIDC flow. (Never redirect to /api/auth/signin: that
+  // is Auth.js's own route and our pages.signIn override would loop it.)
   if (!req.auth) {
-    const signIn = new URL("/api/auth/signin", req.url);
+    const signIn = new URL("/signin", req.url);
     signIn.searchParams.set("callbackUrl", req.url);
     return NextResponse.redirect(signIn);
   }

@@ -18,6 +18,20 @@ COPY . .
 # CI/CD builds — the committed schema is the source of truth at image-build
 # time. Regenerate locally with `npm run generate:api` and commit when the
 # contract changes.
+# Public, browser-inlined config. NEXT_PUBLIC_* are baked into the JS bundle at
+# build time (next.config.ts derives them from these), so they MUST be present
+# now — runtime env can't change them later. CI passes the prod values via
+# --build-arg; the defaults below keep `docker compose up --build` working for
+# local dev. (Without this, the browser bundle hard-codes localhost:8080.)
+ARG HEARTH_API_URL=http://localhost:8080/api/v1
+ARG PINJAM_PUBLIC_URL=https://pinjam.labmgm.org
+ARG KEYCLOAK_ISSUER_URL=https://iam.labmgm.org/realms/mgm
+ARG APP_PUBLIC_ASSET_BASE_URL=https://hearth.labmgm.org/a
+ENV HEARTH_API_URL=$HEARTH_API_URL \
+    PINJAM_PUBLIC_URL=$PINJAM_PUBLIC_URL \
+    KEYCLOAK_ISSUER_URL=$KEYCLOAK_ISSUER_URL \
+    APP_PUBLIC_ASSET_BASE_URL=$APP_PUBLIC_ASSET_BASE_URL
+
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
